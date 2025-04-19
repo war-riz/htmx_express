@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="htmx-config" content='{"selfRequestsOnly":false}' />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>HTMX Crash course</title>
+  </head>
+  <body class="bg-blue-900 text-white min-h-screen flex items-center justify-center">
+    <div class="text-center">
+      <p class="text-5xl my-5">Weather in Nigeria</p>
+      <span hx-get="/api/weather" hx-trigger="every 5s"> Loading... </span>
+    </div>
+  </body>
+</html>

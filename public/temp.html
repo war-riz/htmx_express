@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="htmx-config" content='{"selfRequestsOnly":false}' />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.4"
+      integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>HTMX Crash course</title>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto mt-8 text-center">
+      <div class="bg-white p-4 border rounded-lg max-w-lg m-auto">
+        <h1 class="text-2xl font-bold mb-4">Temperature Converter</h1>
+        <form hx-post="/api/convert" hx-target="#result" hx-indicator="#loading">
+            <label for="fahrenheit">fahrenheit</label>
+            <input type="text" id="fahrenheit" name="fahrenheit" class="border rounded p-2" value="32" required />
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mt-2"
+            > 
+              Convert
+            </button>
+            <span class="htmx-indicator" id="loading">
+              <img src="img/loader.gif" alt="loading..." class="m-auto my-2 h-10" />
+            </span>
+            <div id="result" class="mt-2">
+              <!-- Result will be displayed here -->
+            </div>
+        </form>
+      </div>
+    </div>
+    
+  </body>
+</html>
